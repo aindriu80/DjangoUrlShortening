@@ -16,15 +16,16 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from shortener.views import kirr_redirect_view, KirrCBView
+from shortener.views import kirr_redirect_view, KirrCBView, test_view
 
 # do not use
 # from shortener import views
 # from another_app.view import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'a/(?P<shortcode>[\w-]+)/$', kirr_redirect_view),
-    url(r'b/(?P<shortcode>[\w-]+)/$', KirrCBView.as_view()), 
+    url(r'^about123/', test_view),
+    url(r'a/(?P<shortcode>[\w-]+){6,15}/$', kirr_redirect_view),
+    url(r'b/(?P<shortcode>[\w-]+){6,15}/$', KirrCBView.as_view()), 
 
     # Do not Code ->
     #url(r'^abc/$', 'shortener.views.kirr_redirect_view'), 
