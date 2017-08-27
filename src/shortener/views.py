@@ -9,11 +9,13 @@ from .models import KirrURL
 
 def test_view(request) :
 	return HttpResponse("some example")
- 
+
+
 def kirr_redirect_view(request, shortcode=None, *args, **kwargs):  # function based view FBV	
 	obj = get_object_or_404(KirrURL, shortcode=shortcode)	 	
 	# do soemthing
 	return HttpResponseRedirect(obj.url)
+
 
 class KirrCBView(View): # class based view
 	def get(self, request, shortcode=None, *args, **kwargs):		

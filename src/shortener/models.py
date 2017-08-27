@@ -3,7 +3,7 @@ from django.conf import settings
 from django.db import models
 from .utils import code_generator, create_shortcode
 
-SHORCODE_MAX = getattr(settings, "SHORTCODE_MAX", 15)
+SHORTCODE_MAX = getattr(settings, "SHORTCODE_MAX", 15)
 
 class KirrURLManager(models.Manager):
 	def all(self, *args, **kwargs):
@@ -27,7 +27,7 @@ class KirrURLManager(models.Manager):
 # Create your models here.
 class KirrURL(models.Model):
 	url = models.CharField(max_length=220, )
-	shortcode = models.CharField(max_length=SHORCODE_MAX, unique=True, blank=True) 
+	shortcode = models.CharField(max_length=SHORTCODE_MAX, unique=True, blank=True) 
 	updated = models.DateTimeField(auto_now=True) #everytime the model is saved
 	active = models.BooleanField(default=True)
 	timestamp = models.DateTimeField(auto_now_add=True) #when model was created
