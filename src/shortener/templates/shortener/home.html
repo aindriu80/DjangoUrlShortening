@@ -1,3 +1,13 @@
+<!DOCTYPE html>
 <html>
-	<h2>This is the html page to display</h2>
+<body>
+
+	<div style='width: :800px; margin: 0 auto;'>
+		<h2>Welcome to the HTML shortener</h2>
+		<form method='POST' action='.'> {% csrf_token %} 
+			<input name='url' type='text' placeholder="Shorten your URL"/>	
+			<input type='submit' value='Shorten' />
+		</form>
+	</div>
+</body>
 </html>

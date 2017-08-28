@@ -4,11 +4,24 @@ from django.views import View
 
 from .models import KirrURL
 
+def home_view_fbv(request, *args, **kwargs):
+	if request.method == "POST":
+		print(request.POST)
+	render(request, "shortener/home.html", {}) 
 
 
 # Create your views here.
 class HomeView(View):
 	def get(self, request, *args, **kwargs):
+		return render(request, "shortener/home.html", {}) 
+
+	def post(self, request, *args, **kwargs):
+		some_dict ={}
+		#some_dict['url'] # error
+		some_dict.get('url', "http://www.google.ie")
+		print(request.POST)
+		print(request.POST["url"])
+		print(request.POST.get("url"))
 		return render(request, "shortener/home.html", {}) 
 
 '''
