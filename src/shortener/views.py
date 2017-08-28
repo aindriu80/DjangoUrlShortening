@@ -24,9 +24,9 @@ class HomeView(View):
 	def post(self, request, *args, **kwargs):
 		form = SubmitUrlForm(request.POST)
 		if form.is_valid():
-			print(form.cleaned_data)	
+			print(form.cleaned_data.get("url"))	
 
-			context = {
+		context = {
 		"title": "Submit URL",
 		"form": form
 		}
