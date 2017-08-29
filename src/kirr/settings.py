@@ -31,17 +31,20 @@ ALLOWED_HOSTS = ['tirr.com', 'www.tirr.com', 'www.kirr.co', 'kirr.co']
 # Application definition
 
 INSTALLED_APPS = [
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+     'memoize',
 
     #third party
    #'django_hosts',
 
     #custom app
+    'analytics',
     'shortener',
 ]
 

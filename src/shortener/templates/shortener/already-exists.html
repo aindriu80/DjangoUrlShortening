@@ -5,7 +5,8 @@
 	<div style='width: :800px; margin: 0 auto;'>
 		<h1>Exists!</h1>
 		<h2><p>{{ object.url }}</p></h2>
-		<h2><p>{{ object.get_short_url }}</p></h2>
+		{% if object.clickevent %}<p>Count: {{ object.clickevent.count }}</p>{% endif %}
+		<h2><p><a href='{{ object.get_short_url }}''>{{ object.get_short_url }}</p></h2>
 		<a href='/'>+New</a>
 		
 	</div>

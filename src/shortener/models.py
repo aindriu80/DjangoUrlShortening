@@ -3,6 +3,8 @@ from django.conf import settings
 from django.db import models
 
 from django.core.urlresolvers import reverse
+#from django_hosts.resolvers import reverse
+ 
 
 from .utils import code_generator, create_shortcode
 from .validators import validate_url, validate_dot_com
@@ -30,11 +32,11 @@ class KirrURLManager(models.Manager):
 
 # Create your models here.
 class KirrURL(models.Model):
-	url = models.CharField(max_length=220, validators=[validate_url, validate_dot_com])
+	url 	  = models.CharField(max_length=220, validators=[validate_url, validate_dot_com])
 	shortcode = models.CharField(max_length=SHORTCODE_MAX, unique=True, blank=True) 
-	updated = models.DateTimeField(auto_now=True) #everytime the model is saved
-	active = models.BooleanField(default=True)
+	updated   = models.DateTimeField(auto_now=True) #everytime the model is saved
 	timestamp = models.DateTimeField(auto_now_add=True) #when model was created
+	active 	  = models.BooleanField(default=True)
 	
 	objects = KirrURLManager()
 	
@@ -49,6 +51,7 @@ class KirrURL(models.Model):
 	def __unicode__(self):
 		return str(self.url)
 
-	def get_short_url(self):
+	def get_short_url(self):		
 		url_path = reverse("scode", kwargs={'shortcode': self.shortcode})
-		return "http://www.tirr.com" + url_path
+		return "http://www.tirr.com:8000" + url_path
+		#return url_path
