@@ -46,6 +46,6 @@ class HomeView(View):
 class KirrCBView(View): # class based view
 	def get(self, request, shortcode=None, *args, **kwargs):		
 		obj = get_object_or_404(KirrURL, shortcode=shortcode/home.html)
-		return HttpResponse("hello again {sc}".format(sc=shortcode))
+		return HttpResponse("hello again {sc}".format(sc=scode))
 
 
