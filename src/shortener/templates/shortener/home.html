@@ -1,14 +1,18 @@
-<!DOCTYPE html>
-<html>
-<body>
+{% extends 'base.html' %}
 
-	<div style='width: :800px; margin: 0 auto;'>
-		<h2>{{ title }}</h2>
-		<form method='POST' action='.'> {% csrf_token %} 
-			<!-- <input name='url' type='text' placeholder="Shorten your URL"/>	 -->
-			{{ form.as_p}}
-			<input type='submit' value='Shorten' />
-		</form>
-	</div>
-</body>
-</html>
+{% block content %}
+
+<h1 class="cover-heading">{{ title }}</h1>
+    
+<p class="lead">
+     <div > 
+                <form method='POST' action='.'> {% csrf_token %}
+                    <!-- <input name='url' type='text' placeholder='Shorten your URL like http://www.codingforentrepreneurs.com' /> -->
+                    {{ form.as_p }}
+                    <input class='btn btn-primary' type='submit' value='Shorten' >
+                </form>
+            </div>
+</p>
+
+
+{% endblock content %}
