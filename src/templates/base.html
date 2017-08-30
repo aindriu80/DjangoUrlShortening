@@ -1,38 +1,27 @@
 <!DOCTYPE html>
 <html>
 
-
-
 <head>
 <title>Kirr.co | {% block title %} Shorten that url{% endblock title %}</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	  <link href="https://getbootstrap.com/docs/4.0/examples/cover/cover.css" rel="stylesheet">
+   
+    <style> body{background-color: #226268;  background-image: url('http://www.publicdomainpictures.net/pictures/150000/velka/tropical-beach-1454007190ZAK.jpg'); background-size: cover;text-shadow: none;} .btn-link { color:#50dfec;} .btn-link:hover{ color:#000000;}</style>
+ 
 </head>
-<body>
-<body>
 
+<body>
 
     <div class="site-wrapper">
-
       <div class="site-wrapper-inner">
-
         <div class="cover-container">
               <div class="inner cover">
-
-		    {% block content %}
-			{% endblock content %}
-
-    
-            
-          </div>
-
-   
-
+      		     {% block content %}
+      			   {% endblock content %}               
+              </div>  
         </div>
-
       </div>
-
     </div>
-
 </body>
+
 </html>
